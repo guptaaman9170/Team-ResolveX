@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -67,52 +68,39 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "slide-in-up": {
-          from: {
-            opacity: "0",
-            transform: "translateY(20px)",
-          },
-          to: {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        "pulse-glow": {
-          "0%, 100%": {
-            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
-          },
-          "50%": {
-            boxShadow: "0 0 30px hsl(var(--primary) / 0.6)",
-          },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        float: "float 3s ease-in-out infinite",
-        "slide-in-up": "slide-in-up 0.6s ease-out",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-      },
+  "accordion-down": {
+    from: { height: "0" },
+    to: { height: "var(--radix-accordion-content-height)" },
+  },
+  "accordion-up": {
+    from: { height: "var(--radix-accordion-content-height)" },
+    to: { height: "0" },
+  },
+  float: {
+    "0%, 100%": { transform: "translateY(0px)" },
+    "50%": { transform: "translateY(-10px)" },
+  },
+  "slide-in-up": {
+    from: { opacity: "0", transform: "translateY(20px)" },
+    to: { opacity: "1", transform: "translateY(0)" },
+  },
+  "pulse-glow": {
+    "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+    "50%": { boxShadow: "0 0 30px hsl(var(--primary) / 0.6)" },
+  },
+  "float-3d": {
+    "0%, 100%": { transform: "translateY(0px) rotateX(0deg) rotateY(0deg)" },
+    "50%": { transform: "translateY(-10px) rotateX(2deg) rotateY(2deg)" },
+  },
+},
+animation: {
+  "accordion-down": "accordion-down 0.2s ease-out",
+  "accordion-up": "accordion-up 0.2s ease-out",
+  float: "float 3s ease-in-out infinite",
+  "slide-in-up": "slide-in-up 0.6s ease-out",
+  "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+  "float-3d": "float-3d 6s ease-in-out infinite",
+},
       backgroundImage: {
         "gradient-civic": "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)))",
         "gradient-hero": "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)",
@@ -126,5 +114,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindAnimate],
 } satisfies Config;

@@ -1,6 +1,7 @@
 import { ArrowRight, Camera, Brain, Users, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-civic.jpg";
+import FloatingReportModal from "@/components/FloatingReportModal";
 
 const HeroSection = () => {
   return (
@@ -120,22 +121,19 @@ const HeroSection = () => {
       </div>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-        <Button 
-          size="lg" 
-          className="w-16 h-16 rounded-full btn-emergency shadow-float animate-pulse-glow"
-          aria-label="Emergency SOS"
-        >
-          SOS
-        </Button>
-        <Button 
-          size="lg" 
-          className="w-16 h-16 rounded-full btn-civic shadow-float"
-          aria-label="Quick Report"
-        >
-          <Camera className="w-6 h-6" />
-        </Button>
-      </div>
+<div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+  <Button 
+    size="lg" 
+    className="w-16 h-16 rounded-full btn-emergency shadow-float animate-pulse-glow"
+    aria-label="Emergency SOS"
+  >
+    SOS
+  </Button>
+
+  {/* Floating Report Modal */}
+  <FloatingReportModal />
+</div>
+
     </section>
   );
 };
