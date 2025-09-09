@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ReportPage from "./pages/ReportPage";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import TrackReportsPage from "./pages/TrackReportsPage";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/report" element={<ReportPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/track-reports" element={<TrackReportsPage/>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

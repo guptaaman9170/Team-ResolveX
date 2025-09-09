@@ -47,7 +47,7 @@ const Navigation = () => {
             <a href="/dashboard" className="text-foreground hover:text-primary transition-colors">
               {language === "hi" ? "डैशबोर्ड" : "Dashboard"}
             </a>
-            <a href="/track" className="text-foreground hover:text-primary transition-colors">
+            <a href="/track-reports" className="text-foreground hover:text-primary transition-colors">
               {language === "hi" ? "ट्रैक करें" : "Track Reports"}
             </a>
           </div>
