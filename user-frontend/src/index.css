@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smart Civic Reporting System Design System */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 210 20% 98%;
+    --foreground: 222 84% 4.9%;
+    
+    /* Card Components */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+    
+    /* Popover Components */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+    
+    /* Civic Primary - Professional Blue */
+    --primary: 214 88% 27%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 214 88% 35%;
+    
+    /* Civic Secondary - Lighter Blue */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 214 88% 27%;
+    
+    /* Success - Civic Green */
+    --success: 158 64% 52%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning - Attention Orange */
+    --warning: 43 96% 56%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Emergency - Urgent Red */
+    --emergency: 0 84% 60%;
+    --emergency-foreground: 0 0% 100%;
+    
+    /* Muted Elements */
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Accent - Civic Action */
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Form Elements */
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 214 88% 35%;
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+    
+    /* Civic Gradients */
+    --gradient-civic: linear-gradient(135deg, hsl(214 88% 27%), hsl(214 88% 35%));
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 88% 27%) 0%, hsl(158 64% 52%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(214 32% 97%) 100%);
+    
+    /* Civic Shadows */
+    --shadow-civic: 0 4px 20px -2px hsl(214 88% 27% / 0.15);
+    --shadow-success: 0 4px 20px -2px hsl(158 64% 52% / 0.15);
+    --shadow-elevated: 0 8px 30px -4px hsl(214 88% 27% / 0.2);
+    --shadow-float: 0 12px 40px -8px hsl(214 88% 27% / 0.25);
+    
+    /* Accessibility - High Contrast Mode */
+    --high-contrast-bg: 0 0% 100%;
+    --high-contrast-fg: 0 0% 0%;
+    --high-contrast-primary: 214 100% 20%;
+    --high-contrast-border: 0 0% 20%;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode Core */
+    --background: 214 100% 4%;
+    --foreground: 210 40% 98%;
+    
+    /* Dark Cards */
+    --card: 214 50% 8%;
+    --card-foreground: 210 40% 98%;
+    
+    /* Dark Popover */
+    --popover: 214 50% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Dark Primary - Brighter Blue */
+    --primary: 214 88% 45%;
+    --primary-foreground: 214 100% 4%;
+    --primary-glow: 214 88% 55%;
+    
+    /* Dark Secondary */
+    --secondary: 214 20% 18%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Dark Success */
+    --success: 158 64% 60%;
+    --success-foreground: 214 100% 4%;
+    
+    /* Dark Warning */
+    --warning: 43 96% 65%;
+    --warning-foreground: 214 100% 4%;
+    
+    /* Dark Emergency */
+    --emergency: 0 84% 70%;
+    --emergency-foreground: 214 100% 4%;
+    
+    /* Dark Muted */
+    --muted: 214 20% 18%;
+    --muted-foreground: 215 16% 65%;
+    
+    /* Dark Accent */
+    --accent: 158 64% 60%;
+    --accent-foreground: 214 100% 4%;
+    
+    /* Dark Destructive */
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 214 100% 4%;
+    
+    /* Dark Form Elements */
+    --border: 214 20% 25%;
+    --input: 214 20% 25%;
+    --ring: 214 88% 55%;
+    
+    /* Dark Gradients */
+    --gradient-civic: linear-gradient(135deg, hsl(214 88% 35%), hsl(214 88% 45%));
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 55%), hsl(158 64% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 88% 35%) 0%, hsl(158 64% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(214 50% 8%) 0%, hsl(214 30% 12%) 100%);
+    
+    /* Dark Shadows */
+    --shadow-civic: 0 4px 20px -2px hsl(214 88% 15% / 0.4);
+    --shadow-success: 0 4px 20px -2px hsl(158 64% 25% / 0.4);
+    --shadow-elevated: 0 8px 30px -4px hsl(214 88% 15% / 0.5);
+    --shadow-float: 0 12px 40px -8px hsl(214 88% 15% / 0.6);
+    
+    /* Dark High Contrast */
+    --high-contrast-bg: 0 0% 0%;
+    --high-contrast-fg: 0 0% 100%;
+    --high-contrast-primary: 214 100% 70%;
+    --high-contrast-border: 0 0% 80%;
+  }
+  
+  /* High Contrast Accessibility Mode */
+  .high-contrast {
+    --background: var(--high-contrast-bg);
+    --foreground: var(--high-contrast-fg);
+    --primary: var(--high-contrast-primary);
+    --border: var(--high-contrast-border);
+    --card: var(--high-contrast-bg);
+    --card-foreground: var(--high-contrast-fg);
+  }
+  
+  /* Large Font Accessibility Mode */
+  .large-fonts {
+    font-size: 1.25rem;
+  }
+  
+  .large-fonts h1 { font-size: 3.5rem; }
+  .large-fonts h2 { font-size: 2.75rem; }
+  .large-fonts h3 { font-size: 2.25rem; }
+  .large-fonts .text-sm { font-size: 1rem; }
+  .large-fonts .text-xs { font-size: 0.9rem; }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Focus outline for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer components {
+  /* Civic Button Variants */
+  .btn-civic {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-civic)] transition-all duration-300;
+  }
+  
+  .btn-civic-outline {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+  
+  .btn-success {
+    @apply bg-[hsl(var(--success))] text-success-foreground hover:opacity-90 shadow-[var(--shadow-success)] transition-all duration-300;
+  }
+  
+  .btn-emergency {
+    @apply bg-[hsl(var(--emergency))] text-emergency-foreground hover:opacity-90 animate-pulse;
+  }
+  
+  /* Civic Card Variants */
+  .card-civic {
+    @apply bg-white/80 backdrop-blur-sm border border-border/50 shadow-[var(--shadow-elevated)] rounded-[var(--radius)] transition-all duration-300 hover:shadow-[var(--shadow-float)];
+    background: var(--gradient-card);
+  }
+  
+  .card-report {
+    @apply card-civic p-6 hover:scale-[1.02] transition-transform duration-300;
+  }
+  
+  /* Status Indicators */
+  .status-pending {
+    @apply bg-warning/10 text-warning border-warning/20;
+  }
+  
+  .status-progress {
+    @apply bg-primary/10 text-primary border-primary/20;
+  }
+  
+  .status-resolved {
+    @apply bg-[hsl(var(--success)/0.1)] text-[hsl(var(--success))] border-[hsl(var(--success)/0.2)];
+  }
+  
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Accessibility Helpers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* Skip Link */
+  .skip-link {
+    @apply absolute -top-40 left-6 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md transition-all duration-300;
+  }
+  
+  .skip-link:focus {
+    @apply top-6;
+  }
+}
+
+@layer utilities {
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Custom Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.6);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    background: var(--gradient-civic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
