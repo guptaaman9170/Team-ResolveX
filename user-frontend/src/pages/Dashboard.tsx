@@ -25,8 +25,8 @@ const Dashboard = () => {
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterCategory, setFilterCategory] = useState("all");
 
-  // Mock data for reports
-  const reports = [
+  // Mock data for reports // Reports state
+const [reports, setReports] = useState([
     {
       id: "CR-2024-001",
       title: "Large pothole on Main Street",
@@ -83,7 +83,34 @@ const Dashboard = () => {
       description: "Traffic lights stuck on red, causing major traffic backup.",
       aiConfidence: 98
     }
-  ];
+  ]);
+
+
+  const [votedReports, setVotedReports] = useState<string[]>([]);
+
+
+    const handleVote = (id: string) => {
+  setReports(prevReports =>
+    prevReports.map(report =>
+      report.id === id
+        ? {
+            ...report,
+            votes: votedReports.includes(id)
+              ? report.votes - 1 // remove vote
+              : report.votes + 1 // add vote
+          }
+        : report
+    )
+  );
+
+  setVotedReports(prev =>
+    prev.includes(id)
+      ? prev.filter(voteId => voteId !== id) // remove from voted list
+      : [...prev, id] // add to voted list
+  );
+};
+
+
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -269,9 +296,13 @@ const Dashboard = () => {
                         <Button variant="outline" size="sm">
                           View Details
                         </Button>
-                        <Button variant="outline" size="sm">
-                          <ThumbsUp className="w-4 h-4" />
-                        </Button>
+                        <Button variant={votedReports.includes(report.id) ? "default" : "outline"} size="sm"
+                             onClick={() => handleVote(report.id)}>
+                             <ThumbsUp
+                              className={`w-4 h-4 ${votedReports.includes(report.id) ? "text-blue-500" : ""}`} />
+                            </Button>
+
+
                       </div>
                     </div>
                   </div>

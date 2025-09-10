@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Powered Report</title>
+    <title>Create New Report</title>
 </head>
 <body>
-    <h1>Welcome to the AI Powered Report System</h1>
-    <p>This is a basic HTML page for testing purposes.</p>
+    <h2>Create New Report</h2>
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Photo/Video:</label>
+        <input type="file" name="file" accept="image/*,video/*" required><br><br>
+        
+        <button type="submit">Process</button>
+    </form>
+
+    {% if result %}
+        <h3>Extracted Information</h3>
+        <p><strong>Issue Category:</strong> {{ result.issue_category }}</p>
+        <p><strong>Issue Title:</strong> {{ result.issue_title }}</p>
+        <p><strong>Detailed Description:</strong> {{ result.detailed_description }}</p>
+    {% endif %}
 </body>
 </html>
