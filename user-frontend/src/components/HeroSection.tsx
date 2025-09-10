@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-civic.jpg";
 import FloatingReportModal from "@/components/FloatingReportModal";
 import { Link } from "react-router-dom";
-
+import FloatingEmergencyModal from "@/components/FloatingEmergencyModal";
 
 const HeroSection = () => {
   return (
@@ -127,20 +127,11 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Floating Action Buttons */}
-<div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-  {/* <Button 
-    size="lg" 
-    className="w-16 h-16 rounded-full btn-emergency shadow-float animate-pulse-glow"
-    aria-label="Emergency SOS"
-  >
-    SOS
-  </Button>
-  */}
+ {/* Floating Report Modal */}
+<FloatingReportModal />
 
-  {/* Floating Report Modal */}
-  <FloatingReportModal />
-</div>
+{/* Floating Emergency Modal */}
+<FloatingEmergencyModal />
 
     </section>
   );
