@@ -127,11 +127,14 @@ const HeroSection = () => {
         </div>
       </div>
 
- {/* Floating Report Modal */}
-<FloatingReportModal />
+     {/* ✨ Floating Buttons Container ✨ */}
+  <div className="mb-[-44vh] z-20 ">
+    <FloatingEmergencyModal />
+  </div>
 
-{/* Floating Emergency Modal */}
-<FloatingEmergencyModal />
+  <div className="z-20">
+    <FloatingReportModal />
+  </div>
 
     </section>
   );
