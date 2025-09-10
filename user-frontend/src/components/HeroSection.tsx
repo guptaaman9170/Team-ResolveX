@@ -122,13 +122,14 @@ const HeroSection = () => {
 
       {/* Floating Action Buttons */}
 <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-  <Button 
+  {/* <Button 
     size="lg" 
     className="w-16 h-16 rounded-full btn-emergency shadow-float animate-pulse-glow"
     aria-label="Emergency SOS"
   >
     SOS
   </Button>
+  */}
 
   {/* Floating Report Modal */}
   <FloatingReportModal />
